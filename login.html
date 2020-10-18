@@ -10,6 +10,8 @@
     <script src="/assets/lib/jquery.js"></script>
 
     <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- //引入自己封装的baseAPI文件 -->
+    <script src="/assets/js/baseAPI.js"></script>
     <script src="/assets/js/login.js"></script>
     <link rel="stylesheet" href="/assets/css/login.css">
     <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
@@ -63,8 +65,8 @@
                     </div>
                     <div class="layui-form-item">
                         <i class="layui-icon layui-icon-password"></i>
-                        <input type="password" name="password" required lay-verify="required|pwd|repwd" placeholder="请再次输入密码"
-                            autocomplete="off" class="layui-input">
+                        <input type="password" name="password" required lay-verify="required|pwd|repwd"
+                            placeholder="请再次输入密码" autocomplete="off" class="layui-input">
                     </div>
                     <!-- 提交那妞 -->
                     <button class="layui-btn  layui-btn-fluid  layui-btn-normal" lay-submit

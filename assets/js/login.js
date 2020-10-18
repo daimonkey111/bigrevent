@@ -33,7 +33,7 @@ $(function () {
         e.preventDefault()
         $.ajax({
             type: "post",
-            url: ' http://ajax.frontend.itheima.net/api/reguser',
+            url: '/api/reguser',
             data: {
                 username: $(".username").val(),
                 password: $(".input-pwd").val()
@@ -52,19 +52,32 @@ $(function () {
         e.preventDefault();
         $.ajax({
             type: "post",
-            url: 'http://ajax.frontend.itheima.net/api/login',
+            url: '/api/login',
             data: $(this).serialize(),//快速获取表带里的内容
             success: function (res) {
                 console.log(res);
                 if (res.status !== 0) {
                     return layer.msg("登录失败")
                 }
-                return layer.msg("登录成功");
-                location.href="/index.html"
-
+                layer.msg("登录成功");
+                // 讲台登录成功得到的token 字符串，保存到localStorage中
+                localStorage.setItem("token", res.token)
+                //跳转到后台主页
+                location.href = "/index.html"
             }
         })
     })
+    // 左边用户头像与名称
+
+
+
+
+
+
+
+
+
+
 
 
 })
