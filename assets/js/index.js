@@ -32,6 +32,15 @@ function getUserInfo() {
             // console.log(res);
             renderadvatar(res.data)
         },
+        complete: function (res) {
+            if (res.responseJSON.status === 1 && res.responseJSON.message == "身份认证失败！") {
+                localStorage.removeItem("token");
+                location.href = '/login.html'
+
+
+            }
+
+        }
         //无论调用否成功都会执行的函数complete
         // complete: function (res) {
         //     // console.log(res);
